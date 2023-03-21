@@ -70,7 +70,7 @@ builder.setBolt("PIMReceiver", new PIMReceiver()).allGrouping("PIMTree");
 6. Stream-Aware Join :
 ```
 builder.setBolt("StreamPredictor", new AugmentedSketchForSelfJoin<>("StreamR","Tuple")).fieldsGrouping("ZipF","StreamR",new Fields("Tuple"));
-builder.setBolt("StreamAwareJoiner",  new StreamAwareJoinBolt("StreamR","StreamS","Tuple","Tuple","Swapped_Status",4,timeOfWindowArchive,durationForDeletionOfTree,">="),10).             customGrouping("StreamPredictor",new StreamPartitioningForSelfJoin()).
+builder.setBolt("StreamAwareJoiner",  new StreamAwareJoinBolt("StreamR","StreamS","Tuple","Tuple","Swapped_Status",4,timeOfWindowArchive,durationForDeletionOfTree,">="),10).customGrouping("StreamPredictor",new StreamPartitioningForSelfJoin()).
 customGrouping("ZipF","StreamS", new StreamPartitionerForSingleStream()).setNumTasks(40);
  builder.setBolt("StreamAwareJoinerReceiver", new StreamAwareJoinerReceiver()).allGrouping("StreamAwareJoiner");
 ```
