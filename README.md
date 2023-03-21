@@ -75,5 +75,6 @@ customGrouping("ZipF","StreamS", new StreamPartitionerForSingleStream()).setNumT
  builder.setBolt("StreamAwareJoinerReceiver", new StreamAwareJoinerReceiver()).allGrouping("StreamAwareJoiner");
 ```
 All `ReceiverBolts` for gathering the join results.
-#Contact
+
+# Contact
 Please feel free to contact me via email if you encounter any issues while using this project. My email address is <a href="adeel.aslam@unimore.it">adeel.aslam@unimore.it</a>
