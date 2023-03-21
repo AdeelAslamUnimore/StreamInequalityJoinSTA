@@ -39,7 +39,7 @@ TopologyBuilder builder= new TopologyBuilder();
 However, the example for running the inequality algorithm you should define the kafka spout and bolts carefully and choose the grouping strategy carefully, 
 Here I provide you the example details for single self join algorithm for all Algorithm
 1. Broad cast hash join
-To Run BCHJ: The first `KafkaSput` is same for all:
+To Run BCHJ: The first `KafkaSpout` is same for all:
 ```
       builder.setSpout("KafkaSpout", new org.apache.storm.kafka.spout.KafkaSpout<>(kafkaSpoutConfig));
       builder.setBolt("ZipF", new KafkaBolt()).fieldsGrouping("KafkaSpout", new Fields("Tuple")).setNumTasks(5);
