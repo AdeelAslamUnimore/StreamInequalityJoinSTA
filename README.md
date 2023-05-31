@@ -36,7 +36,7 @@ long timeOfWindowArchive=10000;
 long durationForDeletionOfTree=50000;
 TopologyBuilder builder= new TopologyBuilder();
 ```
-However, the example for running the inequality algorithm you should define the kafka spout and bolts carefully and choose the grouping strategy carefully, 
+However, the example for running the inequality algorithm you should define the kafka spout and bolts carefully and choose the grouping strategy carefully. The time of window Archive and durationForDeletion are subjective and can be changed.
 Here I provide you the example details topology for single self join algorithm for synthetic Zipf data for all Algorithm
 1. Broad cast hash join
 To Run BCHJ: The first `KafkaSpout` is same for all:
